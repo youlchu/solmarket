@@ -1,13 +1,14 @@
 /* eslint-disable jsx-a11y/alt-text */
-import { Box, Text, Image, Button, Avatar, useToast } from '@chakra-ui/react';
-import { DiscoverImage } from 'assets/images';
-import { Discover } from 'assets/data/users';
-import { AvatarIcon } from 'assets/icons';
-import { StarIcon } from '@chakra-ui/icons';
-import { INFT } from 'pages/api/get-nfts';
-import { getGravatar } from 'lib';
-import { useAnchorWallet } from '@solana/wallet-adapter-react';
-import { createSaleTransferTx } from 'lib/createTransferTokenTx';
+import { Box, Text, Image, Button, Avatar, useToast } from "@chakra-ui/react";
+import { DiscoverImage } from "assets/images";
+import { Discover } from "assets/data/users";
+import { AvatarIcon } from "assets/icons";
+import { StarIcon } from "@chakra-ui/icons";
+import { INFT } from "pages/api/get-nfts";
+import { getGravatar } from "lib";
+import { useAnchorWallet } from "@solana/wallet-adapter-react";
+import { createSaleTransferTx } from "lib/createTransferTokenTx";
+
 interface Props {
   item: INFT;
   background?: string;
@@ -22,17 +23,17 @@ export const OnSaleNFTCards = ({ item }: Props) => {
 
       await createSaleTransferTx(anchorWallet, mintAddress);
       toast({
-        title: 'Success',
-        description: 'NFT Purchased',
-        status: 'success',
+        title: "Success",
+        description: "NFT Purchased",
+        status: "success",
         duration: 9000,
         isClosable: true,
       });
     } catch (error: any) {
       toast({
-        title: 'Error',
+        title: "Error",
         description: error?.response?.data?.message || error.message,
-        status: 'error',
+        status: "error",
         duration: 9000,
         isClosable: true,
       });
@@ -41,7 +42,7 @@ export const OnSaleNFTCards = ({ item }: Props) => {
 
   return (
     <Box
-      background={'#3B3B3B'}
+      background={"#3B3B3B"}
       borderRadius="20px"
       marginTop="50px"
       border="1px solid #A259FF"
@@ -70,7 +71,12 @@ export const OnSaleNFTCards = ({ item }: Props) => {
         objectFit="cover"
       />
 
-      <Box color="white" display="flex" justifyContent="center" alignItems="center">
+      <Box
+        color="white"
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+      >
         <Box
           width="90%"
           fontSize="22px"

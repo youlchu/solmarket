@@ -1,14 +1,18 @@
 import { PublicKey } from "@metaplex-foundation/js";
 import { createTransfer, validateTransfer } from "@solana/pay";
 import { getOrCreateAssociatedTokenAccount } from "@solana/spl-token";
+
 import {
   Connection,
   Keypair,
   Transaction,
   clusterApiUrl,
 } from "@solana/web3.js";
+
 import BigNumber from "bignumber.js";
 import bs58 from "bs58";
+
+// walletı web3 objesine çevir
 const fromKeypair = Keypair.fromSecretKey(
   bs58.decode(process.env.WALLET as string)
 );

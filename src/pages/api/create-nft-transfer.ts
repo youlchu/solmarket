@@ -1,6 +1,3 @@
-import { Metaplex, PublicKey } from "@metaplex-foundation/js";
-import { Connection, clusterApiUrl } from "@solana/web3.js";
-import { prisma } from "db";
 import { createTransferTokenTx } from "lib/server/deposit";
 import type { NextApiRequest, NextApiResponse } from "next";
 

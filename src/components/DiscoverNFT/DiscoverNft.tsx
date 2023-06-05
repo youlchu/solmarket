@@ -14,8 +14,6 @@ import Link from "next/link";
 import { DiscoverBg } from "assets/images";
 import { useGetNFTs } from "hooks/useNFT";
 
-// import global css
-
 export const DiscoverNft = () => {
   const { data } = useGetNFTs({});
 

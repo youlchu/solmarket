@@ -28,7 +28,6 @@ import { getImageFromUri } from "lib";
 import { Transaction } from "@solana/web3.js";
 
 import NextLink from "next/link";
-import { useBase64Image } from "hooks/useBase64Image";
 import { useSaveNFT } from "hooks/useNFT";
 
 const steps = [
@@ -91,7 +90,6 @@ export const ReactHookFormExample = ({
 }) => {
   const wallet = useWallet();
   const { connection } = useConnection();
-  const convertImage = useBase64Image();
 
   const [step, setStep] = useState<CreateNFTStep>(CreateNFTStep.IDLE);
   const saveNFT = useSaveNFT();
