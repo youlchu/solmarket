@@ -40,7 +40,7 @@ import {
   WalletMultiButton,
 } from "@solana/wallet-adapter-react-ui";
 import { getGravatar, sanitizeWalletAddress } from "lib";
-// import { Logo } from "components/Logo";
+import { Logo } from "components/Logo";
 
 interface LinkItemProps {
   name: string;
@@ -112,7 +112,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
         }}
       >
         <Link href="/" _hover={{ underline: "none" }}>
-          {/* <Logo /> */}
+          <Logo />
         </Link>
 
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
